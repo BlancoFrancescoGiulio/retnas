@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retnas-hrt"
+version = "1.0.0"
+authors = [{name = "Francesco Giulio Blanco", email = "francesco.blanco@phd.unict.it"}]
+description = "RETNAS: Real Time Neural Adaptive Scheduling — RTNS HRT artifact"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3", "pandas>=2,<3", "PyYAML>=6,<7", "torch>=2.2,<3", "tqdm>=4.65,<5", "tensorboard>=2.14,<3"]
+
+[project.urls]
+Repository = "https://github.com/BlancoFrancescoGiulio/retnas"
+"Author profile" = "https://github.com/BlancoFrancescoGiulio"
+
+[project.optional-dependencies]
+profile = ["thop>=0.1"]
+
+[project.scripts]
+retnas = "retnas.retnas:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,94 @@
+config:
+  policy_type: gru
+  seed: 44
+  sa_types:
+  - 0
+  - 1
+  - 1
+  - 2
+  - 3
+  - 3
+  possible_jobs:
+  - 0
+  - 1
+  - 3
+  - 7
+  hrt_customers:
+  - - 0
+    - 0
+    - 100000000
+    - 100000000
+  hrt_miss_penalty: -30.0
+  alpha: 5
+  dscale: 10000000
+  qos_factor: 3.0
+  jobs_per_arrival: 1
+  scheduling_period: 5000000
+  num_tenants: 4
+  tenant_workloads:
+  - - 1
+    - - 7
+  - - 1
+    - - 3
+  - - 1
+    - - 1
+  - - 1
+    - - 0
+  tenant_targets:
+  - - 1
+    - 0.7
+  - - 0.5
+    - 0.8
+  - - 0.3
+    - 0.9
+  tenant_qos:
+  - - 1
+    - 3.8
+  enable_balancing_reward: false
+  balancing_factor_degree: 3
+  actor_hidden_size: 16
+  critic_hidden_size: 16
+  num_layers: 1
+  buffer_size: 64
+  batch_size: 4
+  update_iteration: 1
+  tau: 0.002
+  gamma: 0.99
+  num_episodes: 2
+  save_freq: 1
+  num_timesteps: 12
+  push_to_buffer_after: 0
+  exploration_noise: 0.005
+  actor_lr: 0.001
+  critic_lr: 0.001
+  prepend_sa_remaining_time: false
+  normalize_reward: false
+  full_sim_reward_factor: 0.05
+  use_packing: false
+  episode_reset_env_state: true
+  reward_slack_factor: 0.01
+  min_deadline_period_factor: 2.1
+  num_steps: 25
+  algorithm: FCFS
+  hardsoft_mode: rc
+  hardsoft_hrt_scheduler: ff
+  cdmsa_cost_mode: best
+  cdmsa_assignment: fastest
+  cdmsa_drop_excluded: true
+  cdmsa_debug: false
+  ssml_capacity_factor: 1.0
+  ssml_cost_mode: best
+  ssml_debug: true
+  ssml_abort_on_hrt_miss: false
+  data_csv_path: data
+  runs_path: outputs/quick/scheduler
+  run_suffix: _gru
+  wcet_schedule_path: outputs/quick/reference.yaml
+  wcet_model_path: null
+  test_model_path: null
+  hrt: true
+  count_ops: false
+  torch_threads: 1
+  hrt_step_mode: all
+  next_state_mode: hrt_only_all_periods
+  hrt_flag_provided_to_the_network: false
